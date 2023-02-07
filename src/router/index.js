@@ -6,7 +6,12 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: { path: '/select-table' }
+    redirect: { path: '/login' }
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: resolve => require(['../views/login.vue'], resolve)
   },
   {
     path: '/select-table',
