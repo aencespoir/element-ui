@@ -5,23 +5,17 @@
       <el-input
         ref="userRef"
         placeholder="用户名"
-        v-model="user"
+        v-model.trim="user"
         clearable
-        @change="confirm"
-      >
-        <template slot="prepend">用户</template>
-      </el-input>
+      ></el-input>
       <el-input
         ref="passRef"
-        style="margin: 20px 0"
+        style="margin: 30px 0"
         placeholder="密码"
-        v-model="pass"
+        v-model.trim="pass"
         type="password"
         clearable
-        @change="confirm"
-      >
-        <template slot="prepend">密码</template>
-      </el-input>
+      ></el-input>
       <el-button
         :loading="btnLoading"
         type="primary"
@@ -75,7 +69,8 @@ export default {
 .Login {
   width: 100%;
   height: 100%;
-  background-color: rgba(#409eff, 0.1);
+  // background-color: rgba(#409eff, 0.1);
+  background: linear-gradient(135deg, #ea5c54 0%, #bb6dec 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,15 +79,29 @@ export default {
     min-height: 300px;
     border-radius: 6px;
     padding: 20px 20px;
-    box-shadow: 0 0 10px #ddd;
+    // box-shadow: inset 0 0 10px #666;
+    // background: #eee;
     p {
       text-align: center;
       font-weight: bold;
-      color: #ccc;
+      color: #fff;
       margin: 10px auto 30px;
       letter-spacing: 1.2px;
       font-size: 30px;
     }
   }
+}
+/deep/.el-input__inner {
+  font-size: 16px;
+  color: #fff;
+  background-color: transparent;
+  &::placeholder {
+    color: #ccc;
+    font-size: 14px;
+  }
+}
+/deep/.el-input.is-active .el-input__inner,
+/deep/.el-input__inner:focus {
+  // border-color: #67c23a;
 }
 </style>
