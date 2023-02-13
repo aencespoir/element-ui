@@ -53,8 +53,11 @@ export default {
           this.btnLoading = true
           setTimeout(() => {
             this.btnLoading = false
-            this.$notify.success({ title: "登录成功" })
             this.$router.push({ name: "select-table" })
+            this.$notify.success({
+              title: this.COM.getTimeToWelcome(),
+              message: "欢迎您, 愿您每天能能量满满"
+            })
           }, 1500)
         } else {
           this.$message.error("用户名或密码错误")

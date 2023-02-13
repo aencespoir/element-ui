@@ -9,6 +9,8 @@ import ElementUI from "element-ui"
 import "element-ui/lib/theme-chalk/index.css"
 import { cloneDeep, isEmpty, isNil, isArray, debounce, uniqBy } from "lodash"
 
+import * as COM from "./common/index"
+
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
@@ -18,6 +20,8 @@ Vue.prototype.$isNil = isNil
 Vue.prototype.$isArray = isArray
 Vue.prototype.$debounce = debounce
 Vue.prototype.$uniqBy = uniqBy
+
+Vue.prototype.COM = COM
 
 new Vue({
   router,
